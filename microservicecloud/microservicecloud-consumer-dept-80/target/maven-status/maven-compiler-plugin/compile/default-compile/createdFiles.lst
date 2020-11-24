@@ -1,0 +1,5 @@
+dyh\config\ConfigBean.class
+myrule\MySelfRule.class
+dyh\controller\DeptController_Consumer.class
+dyh\DeptConsumer80_App.class
+myrule\RandomRule_Custom.class

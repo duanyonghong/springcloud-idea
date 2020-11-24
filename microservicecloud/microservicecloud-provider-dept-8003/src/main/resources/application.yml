@@ -1,0 +1,40 @@
+server:
+     port: 8003
+     
+mybatis:
+    config-location: classpath:mybatis/mybatis.cfg.xml      #mybatis配置文件
+    type-aliases-package: dyh.entities                      #所有Entity(实体) 别名类、所在包
+    mapper-locations: classpath:mybatis/mapper/**/*.xml     #mapper映射文件
+
+spring:
+    application:
+        name: microserviceloud-dept                         #对外暴漏的微服务名称
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource        #当前数据源操作类
+        driver-class-name: com.mysql.jdbc.Driver            #mysql驱动包 com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/cloud03?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;allowMultiQueries=true&amp;useSSL=false&amp;serverTimezone=GMT%2B8	#数据库名
+        username: root
+        password:
+        dbcp2:
+            min-idle: 5                                     #数据库连接池的最小维持连接数
+            initial-size: 5                                 #初始化连接数
+            max-total: 5                                    #最大连接数
+            max-wait-millis: 200
+
+# 注册加入到eureka服务中
+eureka:
+     client: #客户端注册进eureka服务列表内
+          service-url:
+               #defaultZone: http://localhost:7001/eureka #单机版 服务注册
+                defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群版服务注册
+
+     instance: #监控中心的配置显示
+           instance-id: microservicecloud-dept8003  # 自定义服务名称信息
+           prefer-ip-address: true   # 访问路径可以显示IP地址
+
+# 当前服务监控链接对应的页面配置信息
+info:
+    app.name: dyh-microservicecloud
+    company.name: www.dyh.cn
+    build.artifactId: $project.artifactId$
+    build.version: $project.version$
