@@ -1,5 +1,0 @@
-
-#按理上这个文件可以不用了不过为了标准还是保留该文件
-#spring:
-     # application:
-         #    name: microservicecloud-config-dept-client
