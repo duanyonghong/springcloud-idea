@@ -1,7 +1,10 @@
 package dyh.controller;
 
+import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
@@ -19,6 +22,8 @@ import dyh.service.DeptService;
 @Controller
 public class DeptController {
 
+	protected static final Logger logger = LoggerFactory.getLogger(DeptController.class);
+
 	@Autowired
 	private DeptService service;
 
@@ -30,8 +35,8 @@ public class DeptController {
 	@ResponseBody
 	public Object discovery() {
 		List<String> list = client.getServices();
-		System.out.println("*************\t" + list);	// 获取所有已注册的微服务名称
-		
+		logger.info("*************\t" + list);	// 获取所有已注册的微服务名称
+
 		List<ServiceInstance> srvList = client.getInstances("MICROSERVICELOUD-DEPT");	//根据微服务名称获取微服务对象
 		
 		for (ServiceInstance serviceInstance : srvList) {
@@ -55,7 +60,11 @@ public class DeptController {
 	@RequestMapping(value="/dept/list", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Dept> list(){
-		System.out.println("******************dept list******************");
+		Date date = new Date();
+		logger.info("******************dept list******************"+date);
+		logger.error("******************error list******************"+date);
+		logger.debug("******************debug list******************"+date);
+		logger.warn("******************warn list******************"+date);
 		return service.list();
 	} 
 	

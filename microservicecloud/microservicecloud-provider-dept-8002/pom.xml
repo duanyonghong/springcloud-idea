@@ -103,7 +103,29 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-
     </dependencies>
+
+
+
+        <build>
+            <finalName>microservicecloud-provider-dept-8002</finalName>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.0.1.RELEASE</version>
+                    <!--这里写上main方法所在类的路径-->
+                    <configuration>
+                        <mainClass>dyh.DeptProvider8002_App</mainClass>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
 </project>

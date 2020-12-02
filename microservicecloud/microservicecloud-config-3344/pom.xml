@@ -34,4 +34,26 @@
 
     </dependencies>
 
+    <build>
+        <finalName>microservicecloud-config-3344</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.1.RELEASE</version>
+                <!--这里写上main方法所在类的路径-->
+                <configuration>
+                    <mainClass>dyh.Config_3344_StartSpringCloudApp</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

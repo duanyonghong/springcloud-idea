@@ -7,6 +7,8 @@ mybatis:
     mapper-locations: classpath:mybatis/mapper/**/*.xml     #mapper映射文件
 
 spring:
+    profiles:
+    active: logdev
     application:
         name: microserviceloud-dept                         #对外暴漏的微服务名称
     datasource:
