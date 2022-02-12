@@ -24,7 +24,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <dependency><!-- feign 相关内容v1 -->
+        <dependency><!-- feign 相关内容v2 -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>

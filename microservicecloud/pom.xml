@@ -87,7 +87,7 @@
             </dependency>
 
             <!--
-                日志 zzzv1
+                日志 v2
             https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
